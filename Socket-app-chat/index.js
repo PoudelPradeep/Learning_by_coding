@@ -42,6 +42,12 @@ io.on('connection', (socket) => {
         // Broadcast 'send message' event to all clients
         io.emit('send message', chat); 
     }); 
+
+    // disconnect 
+    socket.on('disconnect' , () => {
+        console.log("disconnected user");
+    })
+    
 }); 
 
 // Start server listening on specified port
